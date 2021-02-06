@@ -19,6 +19,7 @@ namespace HackBU_2021
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
             Close();
         }
     }

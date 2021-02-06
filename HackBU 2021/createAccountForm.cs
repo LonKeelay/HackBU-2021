@@ -19,6 +19,11 @@ namespace HackBU_2021
 
         private void btnCreateAcc_Click(object sender, EventArgs e)
         {
+            string username = txtUser.Text;
+            string password = txtPass.Text;
+            Console.WriteLine("tessting");
+            string[] stuff = {username, password};
+            System.IO.File.WriteLine(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff);
             frmPass pass = new frmPass();
             pass.Show();
         }
