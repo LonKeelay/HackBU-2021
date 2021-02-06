@@ -52,12 +52,6 @@
     <Compile Include="createAccountForm.Designer.cs">
       <DependentUpon>createAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="redoPassForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="redoPassForm.Designer.cs">
-      <DependentUpon>redoPassForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,9 +84,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="redoPassForm.resx">
-      <DependentUpon>redoPassForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

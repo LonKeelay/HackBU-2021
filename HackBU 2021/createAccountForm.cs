@@ -19,8 +19,7 @@ namespace HackBU_2021
 
         private void btnCreateAcc_Click(object sender, EventArgs e)
         {
-            frmPass pass = new frmPass();
-            pass.Show();
+
         }
     }
 }
