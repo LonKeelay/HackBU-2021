@@ -14,7 +14,6 @@ namespace HackBU_2021
         [STAThread]
         static void Main()
         {
-            System.Diagnostics.Debug.WriteLine( "Test" );
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());

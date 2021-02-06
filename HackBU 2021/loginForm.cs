@@ -34,7 +34,7 @@ namespace HackBU_2021
         {
             string username = txtUser.Text;
             string password = txtPass.Text;
-            string stuff = "Username: " + username + " Password: " + password;
+            string stuff = username + " " + password;
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
             bool login = false;
             for(int i = 0; i < lines.Length; i++)
