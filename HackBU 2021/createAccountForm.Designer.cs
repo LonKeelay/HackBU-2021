@@ -44,6 +44,7 @@ namespace HackBU_2021
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(206, 22);
             this.txtUser.TabIndex = 0;
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // txtPass
             // 

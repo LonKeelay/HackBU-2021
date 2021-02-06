@@ -18,7 +18,6 @@ namespace HackBU_2021
         public frmCreateAcc()
         {
             InitializeComponent();
-            txtUser.KeyPress += txtUser_KeyPress;
         }
 
         private void btnCreateAcc_Click(object sender, EventArgs e)
