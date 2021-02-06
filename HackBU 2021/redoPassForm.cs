@@ -8,24 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//wowwwwwwwwww testing tiiiimmmmeeeeee comiiiiittttt and puuuuuuuuushhhhhhhhhh
 namespace HackBU_2021
 {
-    public partial class frmMain : Form
+    public partial class frmPass : Form
     {
-        public frmMain()
+        public frmPass()
         {
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }
