@@ -16,6 +16,19 @@ namespace HackBU_2021
         public frmMain()
         {
             InitializeComponent();
+            txtUser.KeyPress += txtUser_KeyPress;
         }
+
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show($"Form.KeyPress: '{e.KeyChar}' pressed.");//this goes away soon
+                e.Handled = true;
+
+            }
+        }
+
     }
 }
