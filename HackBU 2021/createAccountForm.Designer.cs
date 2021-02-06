@@ -34,18 +34,20 @@ namespace HackBU_2021
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.btnCreateAcc = new System.Windows.Forms.Button();
+            this.lblPass2 = new System.Windows.Forms.Label();
+            this.txtPass2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(95, 12);
+            this.txtUser.Location = new System.Drawing.Point(130, 15);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(206, 22);
             this.txtUser.TabIndex = 0;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(95, 40);
+            this.txtPass.Location = new System.Drawing.Point(130, 43);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(206, 22);
             this.txtPass.TabIndex = 2;
@@ -70,19 +72,37 @@ namespace HackBU_2021
             // 
             // btnCreateAcc
             // 
-            this.btnCreateAcc.Location = new System.Drawing.Point(15, 68);
+            this.btnCreateAcc.Location = new System.Drawing.Point(12, 100);
             this.btnCreateAcc.Name = "btnCreateAcc";
-            this.btnCreateAcc.Size = new System.Drawing.Size(286, 29);
+            this.btnCreateAcc.Size = new System.Drawing.Size(324, 29);
             this.btnCreateAcc.TabIndex = 8;
             this.btnCreateAcc.Text = "Create Account";
             this.btnCreateAcc.UseVisualStyleBackColor = true;
             this.btnCreateAcc.Click += new System.EventHandler(this.btnCreateAcc_Click);
             // 
+            // lblPass2
+            // 
+            this.lblPass2.AutoSize = true;
+            this.lblPass2.Location = new System.Drawing.Point(11, 72);
+            this.lblPass2.Name = "lblPass2";
+            this.lblPass2.Size = new System.Drawing.Size(113, 17);
+            this.lblPass2.TabIndex = 10;
+            this.lblPass2.Text = "Password Again:";
+            // 
+            // txtPass2
+            // 
+            this.txtPass2.Location = new System.Drawing.Point(130, 72);
+            this.txtPass2.Name = "txtPass2";
+            this.txtPass2.Size = new System.Drawing.Size(206, 22);
+            this.txtPass2.TabIndex = 9;
+            // 
             // frmCreateAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 108);
+            this.ClientSize = new System.Drawing.Size(356, 142);
+            this.Controls.Add(this.lblPass2);
+            this.Controls.Add(this.txtPass2);
             this.Controls.Add(this.btnCreateAcc);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUser);
@@ -102,5 +122,7 @@ namespace HackBU_2021
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Button btnCreateAcc;
+        private System.Windows.Forms.Label lblPass2;
+        private System.Windows.Forms.TextBox txtPass2;
     }
 }
