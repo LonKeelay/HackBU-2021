@@ -18,12 +18,6 @@ namespace HackBU_2021
             txtUser.KeyPress += txtUser_KeyPress;
         }
 
-<<<<<<< HEAD:HackBU 2021/loginForm.cs
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -35,6 +29,10 @@ namespace HackBU_2021
             }
         }
 
->>>>>>> 8c289ca91e6e4f3e91802998d29abc70a1dbb79c:HackBU 2021/Form1.cs
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
