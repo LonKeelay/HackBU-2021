@@ -15,11 +15,11 @@ namespace HackBU_2021
         public frmLogin()
         {
             InitializeComponent();
-            txtUser.KeyPress += txtUser_KeyPress;
+            //txtUser.KeyPress += txtUser_KeyPress;
         }
 
 
-        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        /**private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         { 
             if (!char.IsDigit(e.KeyChar))
             {
@@ -27,11 +27,28 @@ namespace HackBU_2021
                 e.Handled = true;
 
             }
-        }
+        }*/
 
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = txtUser.Text;
+            string password = txtPass.Text;
+            string stuff = "Username: " + username + " Password: " + password;
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
+            bool login = false;
+            for(int i = 0; i < lines.Length; i++)
+            {
+                if(lines[i].Equals(stuff))
+                {
+                    MessageBox.Show("Welcome " + username + "! You have succesfully logged in."); 
+                    login = true;
+                }
+            }
+            if(!login)
+            {
+                MessageBox.Show("Your username or password is incorrect you cringe machine."); 
+            }
 
         }
     }
