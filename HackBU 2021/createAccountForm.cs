@@ -13,7 +13,8 @@ namespace HackBU_2021
 {
     public partial class frmCreateAcc : Form
     {
-        ArrayList times = new ArrayList();
+        public ArrayList rawTimes = new ArrayList();
+        public long[] fixedTimes;
 
         public frmCreateAcc()
         {
@@ -31,6 +32,15 @@ namespace HackBU_2021
             }
             else if(password.Equals(password2)) //check if two passwords match
             {
+                //set up times
+                fixedTimes = new long[rawTimes.Count-1];
+                for(int i = 0; i < rawTimes.Count-1; i++)
+                {
+                    fixedTimes[i] = (long)rawTimes[i + 1] - (long)rawTimes[i];
+                    //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
+                    //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
+                    System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
+                }
                 string stuff = username + " " + password;
                 //System.IO.File.WriteAllText(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff); //save us and ps to txt file
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
@@ -58,8 +68,9 @@ namespace HackBU_2021
             if (!char.IsDigit(e.KeyChar))
             {
                 System.Diagnostics.Debug.WriteLine(e.KeyChar);
-                long unixTime = DateTimeOffset.Now.ToUnixTimeSeconds();
-                DateTime localDate = DateTime.Now;
+                long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                //DateTime localDate = DateTime.Now;
+                rawTimes.Add(unixTime);
                 System.Diagnostics.Debug.WriteLine(unixTime);
             }
         }
