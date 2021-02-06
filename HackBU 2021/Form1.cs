@@ -21,7 +21,7 @@ namespace HackBU_2021
 
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        { 
             if (!char.IsDigit(e.KeyChar))
             {
                 MessageBox.Show($"Form.KeyPress: '{e.KeyChar}' pressed.");//this goes away soon
