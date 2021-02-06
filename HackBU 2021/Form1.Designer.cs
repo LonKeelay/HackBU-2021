@@ -77,6 +77,7 @@ namespace HackBU_2021
             this.btnCreate.TabIndex = 4;
             this.btnCreate.Text = "Create Account";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnLogin
             // 
@@ -86,6 +87,7 @@ namespace HackBU_2021
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmMain
             // 
