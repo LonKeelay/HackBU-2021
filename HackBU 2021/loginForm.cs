@@ -8,12 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//wowwwwwwwwww testing tiiiimmmmeeeeee comiiiiittttt and puuuuuuuuushhhhhhhhhh
 namespace HackBU_2021
 {
-    public partial class frmMain : Form
+    public partial class frmLogin : Form
     {
-        public frmMain()
+        public frmLogin()
         {
             InitializeComponent();
             txtUser.KeyPress += txtUser_KeyPress;
@@ -30,5 +29,10 @@ namespace HackBU_2021
             }
         }
 
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
