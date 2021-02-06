@@ -58,11 +58,10 @@ namespace HackBU_2021
         { 
             if (!char.IsDigit(e.KeyChar))
             {
-
                 System.Diagnostics.Debug.WriteLine(e.KeyChar);
-                //MessageBox.Show($"Form.KeyPress: '{e.KeyChar}' pressed.");//this goes away soon
-                e.Handled = true;
-
+                long unixTime = DateTimeOffset.Now.ToUnixTimeSeconds();
+                DateTime localDate = DateTime.Now;
+                System.Diagnostics.Debug.WriteLine(unixTime);
             }
         }
     }
