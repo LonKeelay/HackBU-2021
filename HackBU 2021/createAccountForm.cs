@@ -65,7 +65,7 @@ namespace HackBU_2021
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
         { 
-            if (!char.IsDigit(e.KeyChar))
+            if (!e.KeyChar.Equals("\b"))
             {
                 System.Diagnostics.Debug.WriteLine(e.KeyChar);
                 long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
