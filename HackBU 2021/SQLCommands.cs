@@ -66,7 +66,7 @@ namespace HackBU_2021
         {
             conn.Open();
             var cmd = conn.CreateCommand();
-            cmd.CommandText = $"SELECT password FROM users WHERE username='{username}';";
+            cmd.CommandText = $"SELECT password FROM users WHERE username='{username.ToLower()}';";
             var fir = cmd.ExecuteScalar();
             if (fir == null)
             {
@@ -74,7 +74,7 @@ namespace HackBU_2021
                 return 1;
             }
             string pass = fir.ToString();
-            cmd.CommandText = $"SELECT spaces FROM users WHERE username='{username}';";
+            cmd.CommandText = $"SELECT spaces FROM users WHERE username='{username.ToLower()}';";
             string spac = cmd.ExecuteScalar().ToString();
             if (pass == password && spac == spaces)
             {
