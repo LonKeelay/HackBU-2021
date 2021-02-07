@@ -67,7 +67,7 @@ namespace HackBU_2021
             this.lblMemz.Name = "lblMemz";
             this.lblMemz.Size = new System.Drawing.Size(353, 100);
             this.lblMemz.TabIndex = 6;
-            this.lblMemz.Text = "Wewcome to Wogan\'s Bwie Cwedit Union!";
+            this.lblMemz.Text = "Wewcome to the Bwie Cwedit Union!";
             this.lblMemz.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1

@@ -18,7 +18,8 @@ namespace HackBU_2021
             command.CommandText = @"CREATE TABLE IF NOT EXISTS users(
                 username TEXT NOT NULL,
                 password TEXT NOT NULL,
-                spaces TEXT NOT NULL
+                spaces TEXT NOT NULL,
+                chances TEXT NOT NULL
             );";
             command.ExecuteNonQuery();
             conn.Close();
@@ -45,7 +46,7 @@ namespace HackBU_2021
                 conn.Close();
                 return 1;
             }
-            cmd.CommandText = $"INSERT INTO users(username, password, spaces) VALUES('{username}', '{password}','{spaces}');";
+            cmd.CommandText = $"INSERT INTO users(username, password, spaces, chances) VALUES('{username}', '{password}','{spaces}','5');";
             cmd.ExecuteNonQuery();
             conn.Close();
             return 0;

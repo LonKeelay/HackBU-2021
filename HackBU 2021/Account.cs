@@ -16,5 +16,10 @@ namespace HackBU_2021
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

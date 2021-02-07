@@ -44,7 +44,7 @@ namespace HackBU_2021
             this.txtBank.BackColor = System.Drawing.Color.Transparent;
             this.txtBank.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBank.Location = new System.Drawing.Point(186, 47);
-            this.txtBank.Name = "label1";
+            this.txtBank.Name = "txtBank";
             this.txtBank.Size = new System.Drawing.Size(578, 45);
             this.txtBank.TabIndex = 1;
             this.txtBank.Text = "You can view this photo x more times";
@@ -64,20 +64,21 @@ namespace HackBU_2021
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(412, 382);
-            this.btnBack.Name = "button1";
+            this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(109, 41);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Close";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // Account
+            // frmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 397);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Account";
+            this.Name = "frmAccount";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

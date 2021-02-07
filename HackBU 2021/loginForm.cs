@@ -72,19 +72,19 @@ namespace HackBU_2021
                         MessageBox.Show("We don't have that username. Make an account, loser.");
                         break;
                     case 2:
-                        MessageBox.Show("Your password is incorrect you cringe machine.");
+                        MessageBox.Show("Your password is incorrect.");
                         rawTimes.Clear();
                         prevTime = 0;
                         this.txtPass.Clear(); //needed this
                         break;
                     case 3:
-                        MessageBox.Show("Your password doesn't have the right timing you poopyhead.");
+                        MessageBox.Show("Your password doesn't have the right timing....  :(");
                         rawTimes.Clear();
                         prevTime = 0;
                         this.txtPass.Clear();
                         break;
                     default:
-                        MessageBox.Show("Uhh something went wrong.");
+                        MessageBox.Show("something default went wrong (STOP BREAKING OUR PROGRAM!!!)");
                         break;
                 }
                 
@@ -123,8 +123,8 @@ namespace HackBU_2021
         {
             if (e.KeyCode == Keys.Back)
             {
-                MessageBox.Show("Backspaces are for pussies");
-                txtPass.Text = "";
+                MessageBox.Show("Backspaces are for cowards");
+                txtPass.Clear();
                 rawTimes.Clear();
             }
         }

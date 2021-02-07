@@ -117,17 +117,18 @@ namespace HackBU_2021
         {
             if(e.KeyCode == Keys.Back)
             {
-                MessageBox.Show("Backspaces are for pussies");
-                txtPass.Text = "";
+                MessageBox.Show("no typos! gotta power through like a real computer scientist");
+                txtPass.Clear();
                 rawTimes.Clear();
             }
+            System.Diagnostics.Debug.WriteLine(txtPass.Text.Length);
         }
         private void txtPass2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back)
             {
-                MessageBox.Show("Backspaces are for pussies");
-                txtPass2.Text = "";
+                MessageBox.Show("no typos! gotta power through like a real computer scientist");
+                txtPass2.Clear();
                 rawTimes2.Clear();
             }
         }
