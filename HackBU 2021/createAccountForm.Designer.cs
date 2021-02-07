@@ -105,10 +105,11 @@ namespace HackBU_2021
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(342, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 68);
+            this.label1.Size = new System.Drawing.Size(286, 85);
             this.label1.TabIndex = 11;
             this.label1.Text = "Password must not contain spaces\r\nPassword must be longer than 2 characters.\r\nPas" +
-    "sword must be your favorite cheese.\r\nPassword must be not cringe.";
+    "sword must be your favorite cheese.\r\nFavorite cheese must be brie.\r\nPassword mus" +
+    "t be not cringe.";
             // 
             // frmCreateAcc
             // 
