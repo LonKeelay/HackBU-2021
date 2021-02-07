@@ -54,7 +54,7 @@ namespace HackBU_2021
                 }
                 */
                 SQLCommands sql = new SQLCommands();
-                if (sql.createUser(username, password, "p") == 1)
+                if (sql.createUser(username, password, "1,2") == 1)
                 {
                     MessageBox.Show("Username already exists");
                 }

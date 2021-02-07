@@ -111,7 +111,7 @@ namespace HackBU_2021
             bool close = true;
             for(int i = 0; i < a.Length; i++)
             {
-                if(Math.Abs((b[i]-a[i])/ (double)a[i]) < 0.8)
+                if (false) //Math.Abs((b[i]-a[i])/ (double)a[i]) < 0.8)
                 {
                     close = false;
                 }

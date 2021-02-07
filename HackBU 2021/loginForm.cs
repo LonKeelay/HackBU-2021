@@ -39,7 +39,7 @@ namespace HackBU_2021
             /*
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
             */
-            bool login = sql.login(username, password, "p") == 0;
+            bool login = sql.login(username, password, "1,2") == 0;
             if (login)
             {
                 MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
