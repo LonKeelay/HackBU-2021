@@ -60,7 +60,8 @@ namespace HackBU_2021
         /// <returns>
         /// 0 when successful<br/>
         /// 1 when user does not exist<br/>
-        /// 2 when password or speed is wrong<br/>
+        /// 2 when password is wrong<br/>
+        /// 3 when speed is wrong
         /// </returns>
         public int login(string username, string password, string spaces)
         {
@@ -81,10 +82,14 @@ namespace HackBU_2021
                 conn.Close();
                 return 0;
             }
-            else
+            else if (similarEnough(spac, spaces))
             {
                 conn.Close();
                 return 2;
+            }
+            else
+            {
+                return 3;
             }
         }
 
