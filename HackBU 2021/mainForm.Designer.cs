@@ -59,6 +59,7 @@ namespace HackBU_2021
             // lblMemz
             // 
             this.lblMemz.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemz.ForeColor = System.Drawing.Color.DeepPink;
             this.lblMemz.Location = new System.Drawing.Point(12, 24);
             this.lblMemz.Name = "lblMemz";
             this.lblMemz.Size = new System.Drawing.Size(353, 100);
