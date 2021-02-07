@@ -69,14 +69,14 @@ namespace HackBU_2021
 
         private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
         {
-            if (password.Contains(" ") || username.Contains(" "))
+            if (password.Contains(" ") || username.Contains(" ") || password.Length <= 2)
             {
                 return false;
             }
             return true;
         }
 
-        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e) //event when key pressed in password
         {
             System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
@@ -84,14 +84,13 @@ namespace HackBU_2021
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
-                    //DateTime localDate = DateTime.Now;
-                    rawTimes.Add(thisTime);
+                    rawTimes.Add(thisTime); //save times between keypresses
                     System.Diagnostics.Debug.WriteLine(thisTime);
                 
             }
             prevTime = unixTime;
         }
-        private void txtPass2_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPass2_KeyPress(object sender, KeyPressEventArgs e) //event when key pressed in password2
         {
             System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
@@ -99,8 +98,7 @@ namespace HackBU_2021
             if (prevTime2 != 0)
             {
                 thisTime = unixTime - prevTime2; //this is a different format/use than either of the other ones
-                                                //DateTime localDate = DateTime.Now;
-                rawTimes2.Add(thisTime);
+                rawTimes2.Add(thisTime); //save times between keypresses
                 System.Diagnostics.Debug.WriteLine(thisTime);
 
             }
