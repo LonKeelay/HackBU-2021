@@ -27,15 +27,15 @@ namespace HackBU_2021
             string username = txtUser.Text;
             string password = txtPass.Text;
             string password2 = txtPass2.Text;
-            if(!passMatchesConstraints(username, password))
+            if (!passMatchesConstraints(username, password))
             {
-                MessageBox.Show("Password does not fit constraints. Please try again. >:("); 
+                MessageBox.Show("Password does not fit constraints. Please try again. >:(");
             }
-            else if(password.Equals(password2)) //check if two passwords match
+            else if (password.Equals(password2)) //check if two passwords match
             {
                 //set up times
-                fixedTimes = new long[rawTimes.Count-1];
-                for(int i = 0; i < rawTimes.Count-1; i++)
+                fixedTimes = new long[rawTimes.Count - 1];
+                for (int i = 0; i < rawTimes.Count - 1; i++)
                 {
                     fixedTimes[i] = (long)rawTimes[i + 1] - (long)rawTimes[i];
                     //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
@@ -51,13 +51,13 @@ namespace HackBU_2021
             }
             else
             {
-                MessageBox.Show("Passwords do not match. Please try again. >:(");    
+                MessageBox.Show("Passwords do not match. Please try again. >:(");
             }
         }
 
         private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
         {
-            if(password.Contains(" ") || username.Contains(" ")) 
+            if (password.Contains(" ") || username.Contains(" "))
             {
                 return false;
             }
@@ -65,16 +65,17 @@ namespace HackBU_2021
         }
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
-        { 
+        {
             System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
-            if (prevTime != 0) {
+            if (prevTime != 0)
+            {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
-
-                //DateTime localDate = DateTime.Now;
-                rawTimes.Add(thisTime);
-                System.Diagnostics.Debug.WriteLine(thisTime);
+                    //DateTime localDate = DateTime.Now;
+                    rawTimes.Add(thisTime);
+                    System.Diagnostics.Debug.WriteLine(thisTime);
+                
             }
             prevTime = unixTime;
         }
