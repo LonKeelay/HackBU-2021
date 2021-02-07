@@ -36,6 +36,7 @@ namespace HackBU_2021
             this.btnCreateAcc = new System.Windows.Forms.Button();
             this.lblPass2 = new System.Windows.Forms.Label();
             this.txtPass2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUser
@@ -44,7 +45,6 @@ namespace HackBU_2021
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(206, 22);
             this.txtUser.TabIndex = 0;
-            
             // 
             // txtPass
             // 
@@ -57,7 +57,7 @@ namespace HackBU_2021
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(12, 15);
+            this.lblUser.Location = new System.Drawing.Point(12, 20);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(77, 17);
             this.lblUser.TabIndex = 6;
@@ -99,11 +99,24 @@ namespace HackBU_2021
             this.txtPass2.TabIndex = 9;
             this.txtPass2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass2_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(342, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(286, 85);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Password must not contain spaces\r\nPassword must be longer than 2 characters.\r\nPas" +
+    "sword must be your favorite cheese.\r\nFavorite cheese must be brie.\r\nPassword mus" +
+    "t be not cringe.";
+            // 
             // frmCreateAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 142);
+            this.ClientSize = new System.Drawing.Size(643, 142);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPass2);
             this.Controls.Add(this.txtPass2);
             this.Controls.Add(this.btnCreateAcc);
@@ -127,5 +140,6 @@ namespace HackBU_2021
         private System.Windows.Forms.Button btnCreateAcc;
         private System.Windows.Forms.Label lblPass2;
         private System.Windows.Forms.TextBox txtPass2;
+        private System.Windows.Forms.Label label1;
     }
 }

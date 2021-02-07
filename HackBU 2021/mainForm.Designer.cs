@@ -32,6 +32,8 @@ namespace HackBU_2021
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblMemz = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreate
@@ -57,6 +59,7 @@ namespace HackBU_2021
             // lblMemz
             // 
             this.lblMemz.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemz.ForeColor = System.Drawing.Color.DeepPink;
             this.lblMemz.Location = new System.Drawing.Point(12, 24);
             this.lblMemz.Name = "lblMemz";
             this.lblMemz.Size = new System.Drawing.Size(353, 100);
@@ -64,16 +67,28 @@ namespace HackBU_2021
             this.lblMemz.Text = "Wewcome to Wogan\'s Banana Cwedit Union!";
             this.lblMemz.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HackBU_2021.Properties.Resources.Banana_Render__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(388, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(262, 136);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 177);
+            this.ClientSize = new System.Drawing.Size(673, 177);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblMemz);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCreate);
             this.Name = "frmMain";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,6 +97,7 @@ namespace HackBU_2021
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblMemz;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
