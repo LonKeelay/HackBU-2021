@@ -120,7 +120,8 @@ namespace HackBU_2021
 
         private bool passMatchesConstraints(string password) //when we want to add constraints to password like requiring # and caps
         {
-            if (password.Contains(" ")  || password.Length <= 2)
+            char[] forbiddenLetters = {'\'', ';'};
+            if (password.IndexOfAny(forbiddenLetters) != -1 || password.Length <= 2)
             {
                 return false;
             }
@@ -128,7 +129,8 @@ namespace HackBU_2021
         }
         private bool usernameMatchesConstraints(string username) //when we want to add constraints to password like requiring # and caps
         {
-            if (username.Contains(" ") || username.Length <= 2)
+            char[] forbiddenLetters = { '\'', ';' };
+            if (username.IndexOfAny(forbiddenLetters) != -1 || username.Length <= 2)
             {
                 return false;
             }
