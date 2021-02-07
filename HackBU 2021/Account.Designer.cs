@@ -110,7 +110,7 @@ namespace HackBU_2021
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAccount";
-            this.Text = "Form1";
+            this.Text = "Your Account";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

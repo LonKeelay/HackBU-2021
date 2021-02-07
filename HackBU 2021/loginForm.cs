@@ -127,6 +127,7 @@ namespace HackBU_2021
             {
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass.Clear();
+                prevTime = 0;
                 rawTimes.Clear();
             }
         }
