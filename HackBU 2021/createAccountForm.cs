@@ -15,6 +15,7 @@ namespace HackBU_2021
     {
         public ArrayList rawTimes = new ArrayList();
         public long[] fixedTimes;
+        public long prevTime = 0;
 
         public frmCreateAcc()
         {
@@ -43,7 +44,7 @@ namespace HackBU_2021
                 }
                 string stuff = username + " " + password;
                 //System.IO.File.WriteAllText(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff); //save us and ps to txt file
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\sarah\TestFolder\WriteLines2.txt", true))
                 {
                     file.WriteLine(stuff);
                 }
@@ -63,16 +64,19 @@ namespace HackBU_2021
             return true;
         }
 
-        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         { 
-            if (!char.IsDigit(e.KeyChar))
-            {
-                System.Diagnostics.Debug.WriteLine(e.KeyChar);
-                long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            System.Diagnostics.Debug.WriteLine(e.KeyChar);
+            long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            long thisTime = 0;
+            if (prevTime != 0) {
+                thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
+
                 //DateTime localDate = DateTime.Now;
-                rawTimes.Add(unixTime);
-                System.Diagnostics.Debug.WriteLine(unixTime);
+                rawTimes.Add(thisTime);
+                System.Diagnostics.Debug.WriteLine(thisTime);
             }
+            prevTime = unixTime;
         }
     }
 }
