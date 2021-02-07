@@ -62,7 +62,22 @@ namespace HackBU_2021
             }
             else
             {
-                MessageBox.Show("Your username or password is incorrect you cringe machine.");
+                switch (sql.login(username, password, spaces))
+                {
+                    case 1:
+                        MessageBox.Show("Your username is none one that we have you pathetic garbage.");
+                        break;
+                    case 2:
+                        MessageBox.Show("Your password is incorrect you cringe machine.");
+                        break;
+                    case 3:
+                        MessageBox.Show("Your password doesn't have the right timing you poopyhead.");
+                        break;
+                    default:
+                        MessageBox.Show("Uhh something went wrong.");
+                        break;
+                }
+                
             }
             /*
             for(int i = 0; i < lines.Length; i++)
