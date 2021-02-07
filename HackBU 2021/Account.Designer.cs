@@ -76,7 +76,7 @@ namespace HackBU_2021
             // 
             if (frmLogin.chance >= 0)
             {
-                this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+                this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brie")));
                 this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             }
             else {

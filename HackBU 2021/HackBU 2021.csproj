@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="brie.ico" />
+    <None Include="Resources\brie.jpg" />
     <None Include="Resources\Brie_01.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

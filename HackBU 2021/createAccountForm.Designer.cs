@@ -43,7 +43,7 @@ namespace HackBU_2021
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(98, 12);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(156, 20);
             this.txtUser.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace HackBU_2021
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(98, 35);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(156, 20);
             this.txtPass.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace HackBU_2021
             // btnCreateAcc
             // 
             this.btnCreateAcc.Location = new System.Drawing.Point(9, 81);
-            this.btnCreateAcc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateAcc.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateAcc.Name = "btnCreateAcc";
             this.btnCreateAcc.Size = new System.Drawing.Size(243, 24);
             this.btnCreateAcc.TabIndex = 8;
@@ -102,14 +102,14 @@ namespace HackBU_2021
             // txtPass2
             // 
             this.txtPass2.Location = new System.Drawing.Point(98, 58);
-            this.txtPass2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass2.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass2.Name = "txtPass2";
             this.txtPass2.Size = new System.Drawing.Size(156, 20);
             this.txtPass2.TabIndex = 9;
             this.txtPass2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass2_KeyDown);
             this.txtPass2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass2_KeyPress);
             // 
-            // txtBank
+            // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,10 +136,9 @@ namespace HackBU_2021
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCreateAcc";
             this.Text = "Create Account";
-            //this.Load += new System.EventHandler(this.frmCreateAcc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
