@@ -30,9 +30,45 @@ namespace HackBU_2021
             string username = txtUser.Text;
             string password = txtPass.Text;
             string password2 = txtPass2.Text;
-            if (!passMatchesConstraints(username, password))
+            if (!usernameMatchesConstraints(username))
             {
-                MessageBox.Show("Password does not fit constraints. Please try again. >:(");
+                if (password == "")
+                {
+                    MessageBox.Show("Yeah nice try, noname");
+                }
+                else
+                {
+                    MessageBox.Show("Username does not fit constraints. Please try again. >:(");
+                }
+            }
+            else if (!passMatchesConstraints(password))
+            {
+                if (password == "")
+                {
+                    MessageBox.Show("You can't just put nothing in there. You don't want a password? :/");
+                }
+                else
+                {
+                    MessageBox.Show("Password does not fit constraints. Please try again. >:(");
+                    txtPass.Clear();
+                    rawTimes.Clear();
+                    prevTime = 0;
+                    txtPass2.Clear();
+                    rawTimes2.Clear();
+                    prevTime2 = 0;
+                }
+
+
+            }
+            else if (!usernameMatchesConstraints(username)) {
+                if (password == "")
+                {
+                    MessageBox.Show("Yeah nice try, noname");
+                }
+                else
+                {
+                    MessageBox.Show("Username does not fit constraints. Please try again. >:(");
+                }
             }
             else if (password.Equals(password2)) //check if two passwords match
             {
@@ -42,7 +78,8 @@ namespace HackBU_2021
                 {
                     long average = (long)Math.Round(((long)rawTimes[i] + (long)rawTimes2[i]) / 2.0);
                     spaces += average;
-                    if (i != rawTimes.Count - 1) {
+                    if (i != rawTimes.Count - 1)
+                    {
                         spaces += ",";
                     }
                     //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
@@ -70,14 +107,28 @@ namespace HackBU_2021
             else
             {
                 MessageBox.Show("Passwords do not match. Please try again. >:(");
+                txtPass.Clear();
+                rawTimes.Clear();
+                prevTime = 0;
+                txtPass2.Clear();
+                rawTimes2.Clear();
+                prevTime2 = 0;
             }
             //rawTimes.Clear();
             //rawTimes2.Clear();
         }
 
-        private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
+        private bool passMatchesConstraints(string password) //when we want to add constraints to password like requiring # and caps
         {
-            if (password.Contains(" ") || username.Contains(" ") || password.Length <= 2 || username.Length <= 2)
+            if (password.Contains(" ")  || password.Length <= 2)
+            {
+                return false;
+            }
+            return true;
+        }
+        private bool usernameMatchesConstraints(string username) //when we want to add constraints to password like requiring # and caps
+        {
+            if (username.Contains(" ") || username.Length <= 2)
             {
                 return false;
             }
@@ -120,6 +171,7 @@ namespace HackBU_2021
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass.Clear();
                 rawTimes.Clear();
+                prevTime = 0;
             }
             System.Diagnostics.Debug.WriteLine(txtPass.Text.Length);
         }
@@ -130,6 +182,7 @@ namespace HackBU_2021
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass2.Clear();
                 rawTimes2.Clear();
+                prevTime2 = 0;
             }
         }
     }

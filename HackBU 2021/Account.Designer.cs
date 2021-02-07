@@ -48,25 +48,42 @@ namespace HackBU_2021
             this.txtBank.Size = new System.Drawing.Size(578, 45);
             this.txtBank.TabIndex = 1;
             if (frmLogin.chance < 0) {
-                this.txtBank.Text = "";
+                this.txtBank.ForeColor = Color.White;
+                this.txtBank.Text = "it is too late";
+                this.txtBank.Location = new System.Drawing.Point(270, 170);
+                this.txtBank.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             else if (frmLogin.chance == 0)
             {
-                this.txtBank.Text = "You'll never see this perfection again";
+                this.txtBank.Text = "You will never see this perfection again";
+                this.txtBank.Location = new System.Drawing.Point(220, 47);
+                this.txtBank.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                
             }
             else if(frmLogin.chance==1)
             {
                 this.txtBank.Text = "You can only view this photo " + frmLogin.chance + " more time";
+                this.txtBank.Font = new System.Drawing.Font("Comic Sans MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             }
             else
             {
                 this.txtBank.Text = "You can view this photo " + frmLogin.chance + " more times";
+                
             }
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            if (frmLogin.chance >= 0)
+            {
+                this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+                this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            }
+            else {
+                this.panel1.BackColor = Color.Black;
+            }
+            //this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            //this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.txtBank);
             this.panel1.Location = new System.Drawing.Point(-185, -38);
