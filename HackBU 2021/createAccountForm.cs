@@ -104,5 +104,10 @@ namespace HackBU_2021
             }
             prevTime2 = unixTime;
         }
+
+        private void frmCreateAcc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
