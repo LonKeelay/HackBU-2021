@@ -61,7 +61,7 @@ namespace HackBU_2021
             this.lblMemz.Name = "lblMemz";
             this.lblMemz.Size = new System.Drawing.Size(353, 100);
             this.lblMemz.TabIndex = 6;
-            this.lblMemz.Text = "Telcome wo Bogan\'s Lanana Uredit Cnion!";
+            this.lblMemz.Text = "Wewcome to Wogan\'s Banana Cwedit Union!";
             this.lblMemz.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmMain
