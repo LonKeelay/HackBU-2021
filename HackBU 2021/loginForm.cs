@@ -62,7 +62,22 @@ namespace HackBU_2021
             }
             else
             {
-                MessageBox.Show("Your username or password is incorrect you cringe machine.");
+                switch (sql.login(username, password, spaces))
+                {
+                    case 1:
+                        MessageBox.Show("Your username is none one that we have you pathetic garbage.");
+                        break;
+                    case 2:
+                        MessageBox.Show("Your password is incorrect you cringe machine.");
+                        break;
+                    case 3:
+                        MessageBox.Show("Your password doesn't have the right timing you poopyhead.");
+                        break;
+                    default:
+                        MessageBox.Show("Uhh something went wrong.");
+                        break;
+                }
+                
             }
             /*
             for(int i = 0; i < lines.Length; i++)
@@ -82,14 +97,14 @@ namespace HackBU_2021
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.KeyChar);
+            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
                 rawTimes.Add(thisTime);
-                System.Diagnostics.Debug.WriteLine(thisTime);
+                //System.Diagnostics.Debug.WriteLine(thisTime);
 
             }
             prevTime = unixTime;
