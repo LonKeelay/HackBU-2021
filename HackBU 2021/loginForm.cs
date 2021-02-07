@@ -14,6 +14,7 @@ namespace HackBU_2021
     public partial class frmLogin : Form
     {
         public ArrayList rawTimes = new ArrayList();
+        public static int chance;
         public long[] fixedTimes;
         public long prevTime = 0;
         public frmLogin()
@@ -56,8 +57,9 @@ namespace HackBU_2021
                 //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
                 //System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
             }
-            bool login = sql.login(username, password, spaces) == 0;
-            if (login)
+            chance = sql.login(username, password, spaces);
+            bool passed = chance >= -1;
+            if (passed)
             {
                 //MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
                 frmAccount account = new frmAccount();
@@ -68,16 +70,16 @@ namespace HackBU_2021
             {
                 switch (sql.login(username, password, spaces))
                 {
-                    case 1:
+                    case -2:
                         MessageBox.Show("We don't have that username. Make an account, loser.");
                         break;
-                    case 2:
+                    case -3:
                         MessageBox.Show("Your password is incorrect.");
                         rawTimes.Clear();
                         prevTime = 0;
                         this.txtPass.Clear(); //needed this
                         break;
-                    case 3:
+                    case -4:
                         MessageBox.Show("Your password doesn't have the right timing....  :(");
                         rawTimes.Clear();
                         prevTime = 0;
@@ -123,7 +125,7 @@ namespace HackBU_2021
         {
             if (e.KeyCode == Keys.Back)
             {
-                MessageBox.Show("Backspaces are for cowards");
+                MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass.Clear();
                 rawTimes.Clear();
             }

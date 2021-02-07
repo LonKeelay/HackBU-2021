@@ -46,7 +46,7 @@ namespace HackBU_2021
                 conn.Close();
                 return 1;
             }
-            cmd.CommandText = $"INSERT INTO users(username, password, spaces, chances) VALUES('{username}', '{password}','{spaces}','5');";
+            cmd.CommandText = $"INSERT INTO users(username, password, spaces, chances) VALUES('{username}', '{password}','{spaces}','6');";
             cmd.ExecuteNonQuery();
             conn.Close();
             return 0;
@@ -73,24 +73,32 @@ namespace HackBU_2021
             if (fir == null)
             {
                 conn.Close();
-                return 1;
+                return -2;
             }
             string pass = fir.ToString();
             if (pass != password) {
                 conn.Close();
-                return 2;
+                return -3;
             }
             cmd.CommandText = $"SELECT spaces FROM users WHERE username='{username.ToLower()}';";
             string spac = cmd.ExecuteScalar().ToString();
             if(similarEnough(spac, spaces))
             {
+                cmd.CommandText = $"SELECT chances FROM users WHERE username='{username.ToLower()}';";
+                int chance = Int32.Parse(cmd.ExecuteScalar().ToString());
+                if (chance >= 0) {
+                    chance -= 1;
+                    string chanceString = chance.ToString();
+                    cmd.CommandText = $"UPDATE users SET chances = '{chanceString}' WHERE username='{username.ToLower()}';";
+                    cmd.ExecuteScalar();
+                }
                 conn.Close();
-                return 0;
+                return chance;
             }
             else
             {
                 conn.Close();
-                return 3;
+                return -4;
             }
         }
 

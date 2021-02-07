@@ -47,7 +47,21 @@ namespace HackBU_2021
             this.txtBank.Name = "txtBank";
             this.txtBank.Size = new System.Drawing.Size(578, 45);
             this.txtBank.TabIndex = 1;
-            this.txtBank.Text = "You can view this photo x more times";
+            if (frmLogin.chance < 0) {
+                this.txtBank.Text = "";
+            }
+            else if (frmLogin.chance == 0)
+            {
+                this.txtBank.Text = "You'll never see this perfection again";
+            }
+            else if(frmLogin.chance==1)
+            {
+                this.txtBank.Text = "You can only view this photo " + frmLogin.chance + " more time";
+            }
+            else
+            {
+                this.txtBank.Text = "You can view this photo " + frmLogin.chance + " more times";
+            }
             // 
             // panel1
             // 
