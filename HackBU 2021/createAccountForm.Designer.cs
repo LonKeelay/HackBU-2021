@@ -139,7 +139,7 @@ namespace HackBU_2021
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCreateAcc";
             this.Text = "Create Account";
-            this.Load += new System.EventHandler(this.frmCreateAcc_Load);
+            //this.Load += new System.EventHandler(this.frmCreateAcc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
