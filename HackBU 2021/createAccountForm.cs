@@ -34,7 +34,10 @@ namespace HackBU_2021
             else if (password.Equals(password2)) //check if two passwords match
             {
                 //set up times
-                fixedTimes = new long[rawTimes.Count - 1];
+                if (rawTimes.Count > 0)
+                {
+                    fixedTimes = new long[rawTimes.Count - 1];
+                }
                 for (int i = 0; i < rawTimes.Count - 1; i++)
                 {
                     fixedTimes[i] = (long)rawTimes[i + 1] - (long)rawTimes[i];

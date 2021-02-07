@@ -36,7 +36,7 @@ namespace HackBU_2021
             string username = txtUser.Text;
             string password = txtPass.Text;
             string stuff = username + " " + password;
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
+            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
             bool login = sql.login(username, password, "") == 0;
             if (login)
             {
