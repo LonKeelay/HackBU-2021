@@ -77,6 +77,7 @@ namespace HackBU_2021
             this.txtPass.Size = new System.Drawing.Size(184, 20);
             this.txtPass.Size = new System.Drawing.Size(194, 22);
             this.txtPass.TabIndex = 3;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // btnLogin
             // 
