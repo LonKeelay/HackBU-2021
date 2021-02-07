@@ -14,8 +14,9 @@ namespace HackBU_2021
     public partial class frmCreateAcc : Form
     {
         public ArrayList rawTimes = new ArrayList();
-        public long[] fixedTimes;
         public long prevTime = 0;
+        public ArrayList rawTimes2 = new ArrayList();
+        public long prevTime2 = 0;
 
         public frmCreateAcc()
         {
@@ -35,19 +36,16 @@ namespace HackBU_2021
             {
                 string spaces = "";
                 //set up times
-                if (rawTimes.Count > 0)
+                for (int i = 0; i <= rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
                 {
-                    fixedTimes = new long[rawTimes.Count - 1];
-                }
-                for (int i = 0; i < rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
-                {
-                    spaces += rawTimes[i];
+                    long average = (long)Math.Round(((long)rawTimes[i] + (long)rawTimes2[i]) / 2.0);
+                    spaces += average;
                     if (i != rawTimes.Count - 1) {
                         spaces += ",";
                     }
                     //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
                     //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
-                    System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
+                    //System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
                 }
                 string stuff = username + " " + password;
                 //System.IO.File.WriteAllText(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff); //save us and ps to txt file
@@ -92,6 +90,21 @@ namespace HackBU_2021
                 
             }
             prevTime = unixTime;
+        }
+        private void txtPass2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.KeyChar);
+            long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            long thisTime = 0;
+            if (prevTime2 != 0)
+            {
+                thisTime = unixTime - prevTime2; //this is a different format/use than either of the other ones
+                                                //DateTime localDate = DateTime.Now;
+                rawTimes2.Add(thisTime);
+                System.Diagnostics.Debug.WriteLine(thisTime);
+
+            }
+            prevTime2 = unixTime;
         }
     }
 }
