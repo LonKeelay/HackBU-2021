@@ -76,7 +76,7 @@ namespace HackBU_2021
             string pass = fir.ToString();
             cmd.CommandText = $"SELECT spaces FROM users WHERE username='{username.ToLower()}';";
             string spac = cmd.ExecuteScalar().ToString();
-            if (pass == password && spac == spaces)
+            if (pass == password && similarEnough(spac, spaces))
             {
                 conn.Close();
                 return 0;
@@ -102,6 +102,21 @@ namespace HackBU_2021
             cmd.ExecuteNonQuery();
             conn.Close();
 
+        }
+
+        bool similarEnough(string saved, string attempt)
+        {
+            int[] a = Array.ConvertAll(saved.Split(','), int.Parse);
+            int[] b = Array.ConvertAll(attempt.Split(','), int.Parse);
+            bool close = true;
+            for(int i = 0; i < a.Length; i++)
+            {
+                if(Math.Abs((b[i]-a[i])/ (double)a[i]) < 0.8)
+                {
+                    close = false;
+                }
+            }
+            return close;
         }
     }
 }
