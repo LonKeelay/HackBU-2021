@@ -65,6 +65,8 @@ namespace HackBU_2021
             {
                 MessageBox.Show("Passwords do not match. Please try again. >:(");
             }
+            rawTimes.Clear();
+            rawTimes2.Clear();
         }
 
         private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
@@ -103,6 +105,25 @@ namespace HackBU_2021
 
             }
             prevTime2 = unixTime;
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Back)
+            {
+                MessageBox.Show("Backspaces are for pussies");
+                txtPass.Text = "";
+                rawTimes.Clear();
+            }
+        }
+        private void txtPass2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                MessageBox.Show("Backspaces are for pussies");
+                txtPass2.Text = "";
+                rawTimes2.Clear();
+            }
         }
     }
 }

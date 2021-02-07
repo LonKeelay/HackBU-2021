@@ -39,55 +39,45 @@ namespace HackBU_2021
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(17, 17);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUser.Location = new System.Drawing.Point(12, 15);
+            this.lblUser.Location = new System.Drawing.Point(16, 18);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(58, 13);
+            this.lblUser.Size = new System.Drawing.Size(77, 17);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Username:";
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(17, 46);
-            this.lblPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPass.Location = new System.Drawing.Point(12, 43);
+            this.lblPass.Location = new System.Drawing.Point(16, 53);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(56, 13);
+            this.lblPass.Size = new System.Drawing.Size(73, 17);
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "Password:";
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(80, 15);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtUser.Location = new System.Drawing.Point(95, 12);
+            this.txtUser.Location = new System.Drawing.Point(127, 15);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(184, 20);
-            this.txtUser.Size = new System.Drawing.Size(194, 22);
+            this.txtUser.Size = new System.Drawing.Size(257, 22);
             this.txtUser.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(80, 44);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtPass.Location = new System.Drawing.Point(95, 40);
+            this.txtPass.Location = new System.Drawing.Point(127, 49);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(184, 20);
-            this.txtPass.Size = new System.Drawing.Size(194, 22);
+            this.txtPass.Size = new System.Drawing.Size(257, 22);
             this.txtPass.TabIndex = 3;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(146, 82);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnLogin.Location = new System.Drawing.Point(15, 68);
+            this.btnLogin.Location = new System.Drawing.Point(20, 84);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(116, 27);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Size = new System.Drawing.Size(274, 28);
+            this.btnLogin.Size = new System.Drawing.Size(365, 34);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -95,22 +85,20 @@ namespace HackBU_2021
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 126);
-            this.ClientSize = new System.Drawing.Size(303, 109);
+            this.ClientSize = new System.Drawing.Size(404, 134);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUser);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmMain";
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.KeyPreview = true;
 
         }
 

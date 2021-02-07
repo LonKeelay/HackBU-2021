@@ -78,7 +78,7 @@ namespace HackBU_2021
                 MessageBox.Show("Your username or password is incorrect you cringe machine."); 
             }
             */
-
+            rawTimes.Clear();
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -93,6 +93,15 @@ namespace HackBU_2021
 
             }
             prevTime = unixTime;
+        }
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                MessageBox.Show("Backspaces are for pussies");
+                txtPass.Text = "";
+                rawTimes.Clear();
+            }
         }
     }
     
