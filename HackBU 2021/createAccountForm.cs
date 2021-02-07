@@ -175,7 +175,7 @@ namespace HackBU_2021
                 rawTimes.Clear();
                 prevTime = 0;
             }
-            System.Diagnostics.Debug.WriteLine(txtPass.Text.Length);
+            //System.Diagnostics.Debug.WriteLine(txtPass.Text.Length);
         }
         private void txtPass2_KeyDown(object sender, KeyEventArgs e)
         {
