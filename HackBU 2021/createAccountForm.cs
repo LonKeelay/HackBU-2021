@@ -47,12 +47,14 @@ namespace HackBU_2021
                 }
                 string stuff = username + " " + password;
                 //System.IO.File.WriteAllText(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff); //save us and ps to txt file
+                /*
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\sarah\TestFolder\WriteLines2.txt", true))
                 {
                     file.WriteLine(stuff);
                 }
+                */
                 SQLCommands sql = new SQLCommands();
-                if (sql.createUser(username, password, " ") == 1)
+                if (sql.createUser(username, password, "p") == 1)
                 {
                     MessageBox.Show("Username already exists");
                 }
