@@ -44,7 +44,7 @@ namespace HackBU_2021
             /*
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
             */
-            for (int i = 0; i < rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
+            for (int i = 0; i <= rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
             {
                 spaces += rawTimes[i];
                 if (i != rawTimes.Count - 1)
@@ -53,7 +53,7 @@ namespace HackBU_2021
                 }
                 //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
                 //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
-                System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
+                //System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
             }
             bool login = sql.login(username, password, spaces) == 0;
             if (login)
