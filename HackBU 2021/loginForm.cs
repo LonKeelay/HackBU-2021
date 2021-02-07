@@ -59,20 +59,29 @@ namespace HackBU_2021
             bool login = sql.login(username, password, spaces) == 0;
             if (login)
             {
-                MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
+                //MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
+                frmAccount account = new frmAccount();
+                account.Show(); // need to pass info later!!
+                Close();
             }
             else
             {
                 switch (sql.login(username, password, spaces))
                 {
                     case 1:
-                        MessageBox.Show("Your username is none one that we have you pathetic garbage.");
+                        MessageBox.Show("We don't have that username. Make an account, loser.");
                         break;
                     case 2:
                         MessageBox.Show("Your password is incorrect you cringe machine.");
+                        rawTimes.Clear();
+                        prevTime = 0;
+                        this.txtPass.Clear(); //needed this
                         break;
                     case 3:
                         MessageBox.Show("Your password doesn't have the right timing you poopyhead.");
+                        rawTimes.Clear();
+                        prevTime = 0;
+                        this.txtPass.Clear();
                         break;
                     default:
                         MessageBox.Show("Uhh something went wrong.");
@@ -94,7 +103,7 @@ namespace HackBU_2021
                 MessageBox.Show("Your username or password is incorrect you cringe machine."); 
             }
             */
-            rawTimes.Clear();
+            
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {

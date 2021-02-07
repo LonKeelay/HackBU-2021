@@ -75,17 +75,16 @@ namespace HackBU_2021
                 return 1;
             }
             string pass = fir.ToString();
+            if (pass != password) {
+                conn.Close();
+                return 2;
+            }
             cmd.CommandText = $"SELECT spaces FROM users WHERE username='{username.ToLower()}';";
             string spac = cmd.ExecuteScalar().ToString();
-            if (pass == password && similarEnough(spac, spaces))
+            if(similarEnough(spac, spaces))
             {
                 conn.Close();
                 return 0;
-            }
-            else if (similarEnough(spac, spaces))
-            {
-                conn.Close();
-                return 2;
             }
             else
             {
@@ -94,7 +93,7 @@ namespace HackBU_2021
             }
         }
 
-        public void dropTables()
+        private void dropTables()
         {
             conn.Open();
             var cmd = conn.CreateCommand();
@@ -119,10 +118,10 @@ namespace HackBU_2021
             {
                 if ((Math.Abs((b[i]-a[i])/(double)a[i])) > 0.8)
                 {
-                    close = false;
+                    return false;
                 }
             }
-            return close;
+            return true;
         }
     }
 }

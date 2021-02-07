@@ -71,8 +71,8 @@ namespace HackBU_2021
             {
                 MessageBox.Show("Passwords do not match. Please try again. >:(");
             }
-            rawTimes.Clear();
-            rawTimes2.Clear();
+            //rawTimes.Clear();
+            //rawTimes2.Clear();
         }
 
         private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
