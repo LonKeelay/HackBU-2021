@@ -89,6 +89,7 @@ namespace HackBU_2021
             }
             else
             {
+                conn.Close();
                 return 3;
             }
         }
