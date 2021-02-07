@@ -33,14 +33,18 @@ namespace HackBU_2021
             }
             else if (password.Equals(password2)) //check if two passwords match
             {
+                string spaces = "";
                 //set up times
                 if (rawTimes.Count > 0)
                 {
                     fixedTimes = new long[rawTimes.Count - 1];
                 }
-                for (int i = 0; i < rawTimes.Count - 1; i++)
+                for (int i = 0; i < rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
                 {
-                    fixedTimes[i] = (long)rawTimes[i + 1] - (long)rawTimes[i];
+                    spaces += rawTimes[i];
+                    if (i != rawTimes.Count - 1) {
+                        spaces += ",";
+                    }
                     //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
                     //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
                     System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
@@ -54,7 +58,7 @@ namespace HackBU_2021
                 }
                 */
                 SQLCommands sql = new SQLCommands();
-                if (sql.createUser(username, password, "p") == 1)
+                if (sql.createUser(username, password, spaces) == 1)
                 {
                     MessageBox.Show("Username already exists");
                 }
