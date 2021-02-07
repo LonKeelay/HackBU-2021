@@ -57,8 +57,6 @@ namespace HackBU_2021
                     rawTimes2.Clear();
                     prevTime2 = 0;
                 }
-
-
             }
             else if (!usernameMatchesConstraints(username)) {
                 if (password == "")
@@ -82,18 +80,8 @@ namespace HackBU_2021
                     {
                         spaces += ",";
                     }
-                    //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
-                    //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
-                    //System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
                 }
                 string stuff = username + " " + password;
-                //System.IO.File.WriteAllText(@"C:\Users\Public\TestFolder\WriteLines.txt", stuff); //save us and ps to txt file
-                /*
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\sarah\TestFolder\WriteLines2.txt", true))
-                {
-                    file.WriteLine(stuff);
-                }
-                */
                 SQLCommands sql = new SQLCommands();
                 if (sql.createUser(username, password, spaces) == 1)
                 {
@@ -114,8 +102,6 @@ namespace HackBU_2021
                 rawTimes2.Clear();
                 prevTime2 = 0;
             }
-            //rawTimes.Clear();
-            //rawTimes2.Clear();
         }
 
         private bool passMatchesConstraints(string password) //when we want to add constraints to password like requiring # and caps
@@ -139,47 +125,40 @@ namespace HackBU_2021
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e) //event when key pressed in password
         {
-            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
                 rawTimes.Add(thisTime); //save times between keypresses
-                //System.Diagnostics.Debug.WriteLine(thisTime);
-                
             }
             prevTime = unixTime;
         }
         private void txtPass2_KeyPress(object sender, KeyPressEventArgs e) //event when key pressed in password2
         {
-            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime2 != 0)
             {
                 thisTime = unixTime - prevTime2; //this is a different format/use than either of the other ones
                 rawTimes2.Add(thisTime); //save times between keypresses
-                //System.Diagnostics.Debug.WriteLine(thisTime);
-
             }
             prevTime2 = unixTime;
         }
 
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Back)
+            if(e.KeyCode == Keys.Back || txtPass.SelectionLength > 0)
             {
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass.Clear();
                 rawTimes.Clear();
                 prevTime = 0;
             }
-            //System.Diagnostics.Debug.WriteLine(txtPass.Text.Length);
         }
         private void txtPass2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back || txtPass2.SelectionLength > 0)
             {
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass2.Clear();

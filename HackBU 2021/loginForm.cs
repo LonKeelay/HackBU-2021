@@ -21,20 +21,7 @@ namespace HackBU_2021
         {
             InitializeComponent();
             txtPass.PasswordChar = '*';
-            //txtUser.KeyPress += txtUser_KeyPress;
         }
-
-
-        /**private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
-        { 
-            if (!char.IsDigit(e.KeyChar))
-            {
-                MessageBox.Show($"Form.KeyPress: '{e.KeyChar}' pressed.");//this goes away soon
-                e.Handled = true;
-
-            }
-        }*/
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -43,9 +30,6 @@ namespace HackBU_2021
             string password = txtPass.Text;
             string stuff = username + " " + password;
             string spaces = "";
-            /*
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
-            */
             for (int i = 0; i <= rawTimes.Count - 1; i++) //add numbers like 55,33,5,2
             {
                 spaces += rawTimes[i];
@@ -53,15 +37,11 @@ namespace HackBU_2021
                 {
                     spaces += ",";
                 }
-                //long newTime = (long)rawTimes[i+1] - (long)rawTimes[i];
-                //fixedTimes.Add((long)rawTimes[i + 1] - (long)rawTimes[i]);
-                //System.Diagnostics.Debug.WriteLine((long)rawTimes[i + 1] - (long)rawTimes[i]);
             }
             chance = sql.login(username, password, spaces);
             bool passed = chance >= -1;
             if (passed)
             {
-                //MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
                 frmAccount account = new frmAccount();
                 account.Show(); // need to pass info later!!
                 Close();
@@ -91,39 +71,21 @@ namespace HackBU_2021
                 }
                 
             }
-            /*
-            for(int i = 0; i < lines.Length; i++)
-            {
-                if(lines[i].Equals(stuff))
-                {
-                    MessageBox.Show("Welcome " + username + "! You have succesfully logged in."); 
-                    login = true;
-                }
-            }
-            if(!login)
-            {
-                MessageBox.Show("Your username or password is incorrect you cringe machine."); 
-            }
-            */
-            
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
                 rawTimes.Add(thisTime);
-                //System.Diagnostics.Debug.WriteLine(thisTime);
-
             }
             prevTime = unixTime;
         }
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back || txtPass.SelectionLength > 0)
             {
                 MessageBox.Show("no typos! gotta power through like a real computer scientist");
                 txtPass.Clear();
