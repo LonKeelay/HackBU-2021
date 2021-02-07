@@ -88,7 +88,6 @@ namespace HackBU_2021
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
-                                                //DateTime localDate = DateTime.Now;
                 rawTimes.Add(thisTime);
                 System.Diagnostics.Debug.WriteLine(thisTime);
 
