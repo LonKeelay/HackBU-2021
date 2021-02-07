@@ -32,11 +32,21 @@ namespace HackBU_2021
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            SQLCommands sql = new SQLCommands();
             string username = txtUser.Text;
             string password = txtPass.Text;
             string stuff = username + " " + password;
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
-            bool login = false;
+            bool login = sql.login(username, password, "") == 0;
+            if (login)
+            {
+                MessageBox.Show("Welcome " + username + "! You have succesfully logged in.");
+            }
+            else
+            {
+                MessageBox.Show("Your username or password is incorrect you cringe machine.");
+            }
+            /*
             for(int i = 0; i < lines.Length; i++)
             {
                 if(lines[i].Equals(stuff))
@@ -49,6 +59,7 @@ namespace HackBU_2021
             {
                 MessageBox.Show("Your username or password is incorrect you cringe machine."); 
             }
+            */
 
         }
     }

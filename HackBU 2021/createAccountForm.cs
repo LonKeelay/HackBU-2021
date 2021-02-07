@@ -47,6 +47,11 @@ namespace HackBU_2021
                 {
                     file.WriteLine(stuff);
                 }
+                SQLCommands sql = new SQLCommands();
+                if (sql.createUser(username, password, " ") == 1)
+                {
+                    MessageBox.Show("Username already exists");
+                }
             }
             else
             {

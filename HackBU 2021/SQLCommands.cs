@@ -31,8 +31,8 @@ namespace HackBU_2021
         /// <param name="password">User's password</param>
         /// <param name="spaces">Time taken to input the characters in the password</param>
         /// <returns>
-        /// 0 when successful
-        /// 1 when user already exists
+        /// 0 when successful<br/>
+        /// 1 when user already exists<br/>
         /// </returns>
         public int createUser(string username, string password, string spaces)
         {
@@ -58,9 +58,9 @@ namespace HackBU_2021
         /// <param name="password">User's password</param>
         /// <param name="spaces">Time taken to input the characters in the password</param>
         /// <returns>
-        /// 0 when successful
-        /// 1 when user does not exist
-        /// 2 when password or speed is wrong
+        /// 0 when successful<br/>
+        /// 1 when user does not exist<br/>
+        /// 2 when password or speed is wrong<br/>
         /// </returns>
         public int login(string username, string password, string spaces)
         {
@@ -78,12 +78,30 @@ namespace HackBU_2021
             string spac = cmd.ExecuteScalar().ToString();
             if (pass == password && spac == spaces)
             {
+                conn.Close();
                 return 0;
             }
             else
             {
+                conn.Close();
                 return 2;
             }
+        }
+
+        public void dropTables()
+        {
+            conn.Open();
+            var cmd = conn.CreateCommand();
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "DROP TABLE users;";
+            cmd.CommandText = @"CREATE TABLE IF NOT EXISTS users(
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                spaces TEXT NOT NULL
+            );";
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
         }
     }
 }
