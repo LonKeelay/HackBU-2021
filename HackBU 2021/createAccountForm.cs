@@ -21,6 +21,8 @@ namespace HackBU_2021
         public frmCreateAcc()
         {
             InitializeComponent();
+            txtPass.PasswordChar = '*';
+            txtPass2.PasswordChar = '*';
         }
 
         private void btnCreateAcc_Click(object sender, EventArgs e)

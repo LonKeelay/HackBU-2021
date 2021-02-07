@@ -19,6 +19,7 @@ namespace HackBU_2021
         public frmLogin()
         {
             InitializeComponent();
+            txtPass.PasswordChar = '*';
             //txtUser.KeyPress += txtUser_KeyPress;
         }
 
