@@ -115,8 +115,8 @@ namespace HackBU_2021
             this.label1.Size = new System.Drawing.Size(286, 85);
             this.label1.TabIndex = 11;
             this.label1.Text = "Password must not contain \' or ;\r\nPassword must be longer than 2 characters.\r\nPas" +
-    "sword must be your favorite cheese.\r\nFavorite cheese must be brie.\r\nPassword mus" +
-    "t be not cringe.";
+    "sword shoukd be your favorite cheese.\r\nFavorite cheese must be brie.\r\nPassword m" +
+    "ust be not cringe.";
             // 
             // frmCreateAcc
             // 
