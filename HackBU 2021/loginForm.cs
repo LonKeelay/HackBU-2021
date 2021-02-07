@@ -93,21 +93,30 @@ namespace HackBU_2021
                 MessageBox.Show("Your username or password is incorrect you cringe machine."); 
             }
             */
-
+            rawTimes.Clear();
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.KeyChar);
+            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
                 rawTimes.Add(thisTime);
-                System.Diagnostics.Debug.WriteLine(thisTime);
+                //System.Diagnostics.Debug.WriteLine(thisTime);
 
             }
             prevTime = unixTime;
+        }
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                MessageBox.Show("Backspaces are for pussies");
+                txtPass.Text = "";
+                rawTimes.Clear();
+            }
         }
     }
     

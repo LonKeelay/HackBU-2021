@@ -55,6 +55,7 @@ namespace HackBU_2021
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(156, 20);
             this.txtPass.TabIndex = 2;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // lblUser
@@ -105,6 +106,7 @@ namespace HackBU_2021
             this.txtPass2.Name = "txtPass2";
             this.txtPass2.Size = new System.Drawing.Size(156, 20);
             this.txtPass2.TabIndex = 9;
+            this.txtPass2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass2_KeyDown);
             this.txtPass2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass2_KeyPress);
             // 
             // label1
