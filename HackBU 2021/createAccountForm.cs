@@ -69,7 +69,7 @@ namespace HackBU_2021
 
         private bool passMatchesConstraints(string username, string password) //when we want to add constraints to password like requiring # and caps
         {
-            if (password.Contains(" ") || username.Contains(" "))
+            if (password.Contains(" ") || username.Contains(" ") || password.Length <= 2)
             {
                 return false;
             }
