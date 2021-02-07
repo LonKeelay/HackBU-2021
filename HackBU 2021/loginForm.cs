@@ -82,14 +82,14 @@ namespace HackBU_2021
         }
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.KeyChar);
+            //System.Diagnostics.Debug.WriteLine(e.KeyChar);
             long unixTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             long thisTime = 0;
             if (prevTime != 0)
             {
                 thisTime = unixTime - prevTime; //this is a different format/use than either of the other ones
                 rawTimes.Add(thisTime);
-                System.Diagnostics.Debug.WriteLine(thisTime);
+                //System.Diagnostics.Debug.WriteLine(thisTime);
 
             }
             prevTime = unixTime;
