@@ -62,6 +62,10 @@ namespace HackBU_2021
                 {
                     MessageBox.Show("Username already exists");
                 }
+                else
+                {
+                    Close();
+                }
             }
             else
             {
